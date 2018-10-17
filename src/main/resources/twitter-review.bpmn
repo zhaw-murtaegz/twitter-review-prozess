@@ -106,7 +106,7 @@
 var alias = emailAdress.substring(0,4);
 execution.setVariable("alias", alias);</bpmn:script>
     </bpmn:scriptTask>
-    <bpmn:serviceTask id="TweetSenden" name="Tweet senden" camunda:delegateExpression="#{sendTweetAdapter}">
+    <bpmn:serviceTask id="TweetSenden" name="Tweet senden" camunda:asyncBefore="true" camunda:delegateExpression="#{sendTweetAdapter}">
       <bpmn:extensionElements>
         <camunda:properties>
           <camunda:property name="KPI-Ratio" value="Tweet Rejected" />
